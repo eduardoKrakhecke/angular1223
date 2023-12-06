@@ -1,0 +1,16 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title class="card-title">{{ user.name }}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <p>Email: {{ user.email }}</p>
+    <p>Telefone: {{ user.phone }}</p>
+    <p>Cidade: {{ user.address.city }}</p>
+    <p>Rua: {{ user.address.street }}</p>
+    <p>CEP: {{ user.address.zipcode }}</p>
+    <p>Mapa: {{user.address.geo.lat}}  {{user.address.geo.lng}}</p>
+    <app-map [latitude]="user.address.geo.lat" [longitude]="user.address.geo.lng"></app-map>
+  </ion-card-content>
+</ion-card>
+

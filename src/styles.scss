@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Alatsi&display=swap');
+@import "~@ionic/angular/css/core.css";
+@import '~font-awesome/css/font-awesome.min.css';
+
+
+* {
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  font-family: 'Alatsi', sans-serif;
+}

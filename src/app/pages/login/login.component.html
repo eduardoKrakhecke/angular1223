@@ -1,0 +1,26 @@
+<app-card class="container">
+  <div class="form-login">
+    <form #loginForm="ngForm" class="form-signin" (ngSubmit)="authenticate()">
+      <ion-input
+        label="E-mail"
+        [(ngModel)]="login.email"
+        [ngModelOptions]="{standalone: true}"
+        required
+        label-placement="floating"
+        fill="outline"
+        type="email">
+      </ion-input>
+      <ion-input
+        label="Senha"
+        [(ngModel)]="login.password"
+        [ngModelOptions]="{standalone: true}"
+        required
+        label-placement="floating"
+        fill="outline"
+        type="password">
+      </ion-input>
+      <ion-button [disabled]="loginForm.invalid" type="submit" color="dark">Entrar</ion-button>
+    </form>
+  </div>
+
+</app-card>
