@@ -1,0 +1,54 @@
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.card {
+  width: 800px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #007bff;
+  color: #fff;
+  padding: 6px;
+}
+
+.footer {
+  background-color: #f8f9fa;
+  padding: 10px;
+  text-align: center;
+}
+
+.content {
+  padding: 10px;
+}
+
+h3, p {
+  margin: 5px;
+}
+
+.icon {
+  display: flex;
+  flex-direction: row;
+  width: 100px;
+  align-items: baseline;
+  cursor: pointer;
+}
+
+.label-comments {
+  font-size: 14px;
+  color: #4096f3;
+}
+
+.label-post {
+  color: #525151;
+}

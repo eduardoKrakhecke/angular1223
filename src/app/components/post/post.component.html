@@ -1,1 +1,17 @@
-<p>post works!</p>
+<div class="card-container">
+  <div class="card">
+    <div class="header">
+      <p> Usuário: {{post.user?.username}} escreveu:</p>
+      <p>{{post.title}}</p>
+    </div>
+    <div class="content">
+      <p class="label-post">{{post.body}}</p>
+    </div>
+    <div class="footer">
+      <a class="icon" (click)="emitClickEvent(post.id)" >
+        <p class="label-comments">Comentários</p>
+        <i class="fa fa-comment-o label-comments"></i>
+      </a>
+    </div>
+  </div>
+</div>
