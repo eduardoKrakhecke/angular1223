@@ -5,6 +5,8 @@ import { HomeComponent } from "@app/pages/home/home.component";
 import { AuthGuard } from "@app/auth-guard/auth.guard";
 import { UserComponent } from "@app/pages/user/user.component";
 
+import { HomeResolverService } from "@app/services/home-resolver.service";
+
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
@@ -13,7 +15,7 @@ const routes: Routes = [
     runGuardsAndResolvers: 'always',
     canActivate: [AuthGuard],
     children: [
-      { path: 'home', component: HomeComponent },
+      { path: 'home', component: HomeComponent, resolve: { data: HomeResolverService} },
       { path: 'user', component: UserComponent },
       //{ path: 'clientes/listagem/detalhes/:id', component: ClientDatailComponent },
     ]

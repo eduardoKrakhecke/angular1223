@@ -17,7 +17,8 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: #007bff;
+  justify-content: flex-start;
+  background-color: #1478ea;
   color: #fff;
   padding: 6px;
 }
@@ -26,10 +27,17 @@
   background-color: #f8f9fa;
   padding: 10px;
   text-align: center;
+  height: 27px;
+  transition: height 0.3s ease;
+
+  &.expanded {
+    height:auto;
+  }
 }
 
 .content {
   padding: 10px;
+  background-color: white;
 }
 
 h3, p {
@@ -44,11 +52,47 @@ h3, p {
   cursor: pointer;
 }
 
+.icon-remove {
+  cursor: pointer;
+}
+
 .label-comments {
   font-size: 14px;
   color: #4096f3;
 }
 
 .label-post {
+  color: #525151;
+}
+
+.container-user {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.container-comment {
+  display: flex;
+  flex-direction: row;
+  text-align: justify;
+
+}
+
+.comment-user {
+  font-size: 14px;
+  font-weight: 500;
+  color: #053a95;
+  cursor: pointer;
+  margin-right: 0;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+}
+
+.comment-body {
+  font-weight: unset;
+  font-size: 14px;
   color: #525151;
 }

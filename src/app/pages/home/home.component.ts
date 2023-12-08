@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { PostService } from "@app/services/post.service";
-import { UserService } from "@app/services/user.service";
+import { ActivatedRoute } from '@angular/router';
+
 import { ToastService } from "@app/components/shared/toast/toast.service";
 import { LoadingService } from "@app/components/shared/loading/loading.service";
 import { ComentService } from "@app/services/coment.service";
@@ -9,6 +9,9 @@ import { messages } from "@app/constants/messages";
 
 import { Post } from "@app/models/post";
 import { User } from "@app/models/user/user";
+import { Comment } from "@app/models/comment";
+import {ModalConfirmService} from "@app/components/shared/modal-confirm/modal-confirm.service";
+import {PostService} from "@app/services/post.service";
 
 
 @Component({
@@ -21,64 +24,65 @@ export class HomeComponent {
   users: User[] = []
   posts: Post[] = []
   comments: Comment[] = []
+  postCommentsMap: Map<number | undefined, Comment[]> = new Map<number | undefined, Comment[]>();
+  data: any
 
   constructor(
+    private route: ActivatedRoute,
     private loadingService: LoadingService,
-    private userService: UserService,
     private commentService: ComentService,
-    private toastService: ToastService,
-    private postService: PostService) {
+    private postService: PostService,
+    private modalConfirmService: ModalConfirmService,
+    private toastService: ToastService,) {
+
+    this.data = this.route.snapshot.data['data'];
+    this.posts = this.data.posts;
+    this.users = this.data.users
   }
 
   ngOnInit() {
-    this.getUsers()
-    this.getPosts()
+    this.posts.forEach(post => {
+      post.user = this.users.find(user => user.id === post.userId);
+    });
   }
 
-  getPosts(): void {
-    this.loadingService.set(true)
-    //setTimeout(()=>{
-    this.postService.getPosts().subscribe(
-      (response: Post[])=> {
-        this.posts = response
-        this.posts.forEach(post => {
-          post.user = this.users.find(user => user.id === post.userId);
-        });
-        this.loadingService.set(false)
-        console.log(this.posts)
-      },
-      (error: Error)=> {
-        this.loadingService.set(false)
-        this.toastService.showToast(messages.GENERIC_ERROR)
-        console.error(error)
-      }
-    )
-    //},4000)
+  showComments(obj: any) {
+   if(obj.isExpanded) {
+     if (!this.postCommentsMap.has(obj.id)) {
+       this.commentService.getComentByIdPost(obj.id).subscribe(
+         (response: Comment[]) => {
+           this.postCommentsMap.set(obj.id, response);
+           console.log(this.postCommentsMap.get(obj.id));
+         },
+         (error: Error) => {
+           this.toastService.showToast(messages.GENERIC_ERROR);
+           console.error(error);
+         }
+       );
+     }
+   }
   }
 
-  getUsers(): void {
-      this.userService.getUsers().subscribe(
-        (response: User[]) => {
-          this.users = response
-        },
-        (error: Error) => {
-          this.toastService.showToast(messages.GENERIC_ERROR)
-          console.error(error)
-        }
-      )
-  }
-
-  showComments(id: number) {
-    this.commentService.getComentByIdPost(id).subscribe(
-      (response: Comment[]) => {
-        this.comments = response
-        console.log(this.comments)
+  removePostById(id: number): void {
+    this.postService.deletePost(id).subscribe(
+      () => {
+        this.posts = this.posts.filter(post => post.id !== id);
+        this.toastService.showToast(messages.GENERIC_SUCCESS);
       },
       (error: Error) => {
-        this.toastService.showToast(messages.GENERIC_ERROR)
-        console.error(error)
+        this.toastService.showToast(messages.GENERIC_ERROR);
+        console.error(error);
       }
     )
+  }
+
+  handleClickRemove(postId: number): void {
+    this.modalConfirmService.openModal();
+    this.modalConfirmService.getConfirmation().subscribe((confirm: boolean) => {
+      if (confirm) {
+        this.removePostById(postId);
+      }
+    });
   }
 
 }

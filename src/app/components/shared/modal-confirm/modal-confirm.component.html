@@ -1,0 +1,12 @@
+<div class="modal" tabindex="-1"  *ngIf="modalConfirmService.isModalOpen()">
+    <div class="modal-content">
+        <h4 >{{title}}</h4>
+      <div class="modal-body">
+        <p>{{message}}</p>
+      </div>
+      <div>
+        <ion-button size="small" color="danger" (click)="cancel()">Cancelar</ion-button>
+        <ion-button size="small" color="light" (click)="confirm()">Confirmar</ion-button>
+      </div>
+    </div>
+</div>

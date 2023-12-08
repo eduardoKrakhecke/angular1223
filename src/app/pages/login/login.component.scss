@@ -1,15 +1,19 @@
-* {
-  margin-right: 10px;
-  margin-left: 10px;
-}
 
 .container {
   display: flex;
   justify-content: center;
 }
 
+app-card {
+  width: 100%;
+  max-width: 500px;
+}
+
 .form-login {
- /* width: 100%;
-  max-width: 600px;*/
- // margin: 0 auto;
+  width: 100%;
+  max-width: 600px;
+}
+
+ion-input, ion-button {
+  margin-top: 8px;
 }

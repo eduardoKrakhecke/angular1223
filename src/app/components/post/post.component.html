@@ -1,17 +1,29 @@
 <div class="card-container">
   <div class="card">
     <div class="header">
-      <p> Usuário: {{post.user?.username}} escreveu:</p>
+      <p> Usuário {{post.user?.username}} escreveu:</p>
       <p>{{post.title}}</p>
+        <a class="icon-remove">
+          <i class="fa fa-trash fa-lg" (click)="handleClick(post.id)"></i>
+        </a>
     </div>
     <div class="content">
       <p class="label-post">{{post.body}}</p>
     </div>
-    <div class="footer">
+    <div class="footer" [ngClass]="{'expanded': isExpanded}">
       <a class="icon" (click)="emitClickEvent(post.id)" >
         <p class="label-comments">Comentários</p>
         <i class="fa fa-comment-o label-comments"></i>
       </a>
+      <div *ngFor="let comment of comments">
+        <div class="container-user">
+          <p class="comment-user">{{comment.email}}</p>
+          <p class="comment-body">comentou:</p>
+        </div>
+        <div class="container-comment">
+          <p class="comment-body">{{comment.body | removeSlash }}</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

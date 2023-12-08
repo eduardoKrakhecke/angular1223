@@ -1,0 +1,93 @@
+export const user = [
+  {
+    "isActive": true,
+    "picture": "http://placehold.it/32x32",
+    "age": 30,
+    "name": "Sara Petersen",
+    "gender": "female",
+    "email": "Eliseo@gardner.biz",
+    "phone": "+1 (999) 555-2552",
+    "address": "287 Conway Street, Snyderville, North Dakota, 3103",
+    "registered": "2022-09-08T12:02:09 +03:00",
+    "latitude": -62.206979,
+    "longitude": 171.949039
+  },
+  {
+    "isActive": false,
+    "picture": "http://placehold.it/32x32",
+    "age": 21,
+    "name": "Lindsey Mccoy",
+    "gender": "male",
+    "email": "Jayne_Kuhic@sydney.com",
+    "phone": "+1 (856) 437-3170",
+    "address": "437 Agate Court, Logan, Alabama, 7696",
+    "registered": "2015-05-21T07:28:21 +03:00",
+    "latitude": 82.578008,
+    "longitude": -10.608559
+  },
+  {
+    "isActive": false,
+    "picture": "http://placehold.it/32x32",
+    "age": 21,
+    "name": "Rosetta Holland",
+    "gender": "female",
+    "email": "Nikita@garfield.biz",
+    "phone": "+1 (910) 594-2570",
+    "address": "813 Hendrickson Street, Fairfield, Louisiana, 3131",
+    "registered": "2023-10-19T02:26:15 +03:00",
+    "latitude": 47.329926,
+    "longitude": -102.784008
+  },
+  {
+    "isActive": false,
+    "picture": "http://placehold.it/32x32",
+    "age": 27,
+    "name": "Sandoval Robertson",
+    "gender": "male",
+    "email": "Lew@alysha.tv",
+    "phone": "+1 (886) 471-3536",
+    "address": "844 Utica Avenue, Adelino, Colorado, 2625",
+    "registered": "2019-01-21T10:53:47 +03:00",
+    "latitude": -67.498223,
+    "longitude": 176.673648
+  },
+  {
+    "isActive": true,
+    "picture": "http://placehold.it/32x32",
+    "age": 30,
+    "name": "Hollie Fry",
+    "gender": "female",
+    "email": "Hayden@althea.biz",
+    "phone": "+1 (900) 501-3370",
+    "address": "811 Withers Street, Manchester, Mississippi, 8136",
+    "registered": "2015-02-20T03:09:19 +03:00",
+    "latitude": -80.529124,
+    "longitude": -21.842564
+  },
+  {
+    "isActive": true,
+    "picture": "http://placehold.it/32x32",
+    "age": 23,
+    "name": "Cora Walton",
+    "gender": "female",
+    "email": "Presley.Mueller@myrl.com",
+    "phone": "+1 (936) 563-2840",
+    "address": "666 Vandervoort Avenue, Darbydale, District Of Columbia, 1734",
+    "registered": "2020-03-15T03:33:26 +03:00",
+    "latitude": 38.15584,
+    "longitude": -86.458351
+  },
+  {
+    "isActive": true,
+    "picture": "http://placehold.it/32x32",
+    "age": 29,
+    "name": "Riggs Chapman",
+    "gender": "male",
+    "email": "Dallas@ole.me",
+    "phone": "+1 (820) 470-3388",
+    "address": "832 Cherry Street, Robinette, New Hampshire, 9841",
+    "registered": "2022-09-16T05:25:08 +03:00",
+    "latitude": -72.503179,
+    "longitude": 89.881866
+  }
+]

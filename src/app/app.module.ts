@@ -18,6 +18,9 @@ import { CardUserComponent } from './components/card-user/card-user.component';
 import { MapComponent } from './components/shared/map/map.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
 import { PostComponent } from './components/post/post.component';
+import { RemoveSlashPipe } from './components/pipes/remove-slash.pipe';
+import { ModalConfirmComponent } from './components/shared/modal-confirm/modal-confirm.component';
+import { ModalUserComponent } from './components/modal-user/modal-user.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { PostComponent } from './components/post/post.component';
     CardUserComponent,
     MapComponent,
     LoadingComponent,
-    PostComponent
+    PostComponent,
+    RemoveSlashPipe,
+    ModalConfirmComponent,
+    ModalUserComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
