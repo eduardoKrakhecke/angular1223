@@ -11,6 +11,7 @@ export class PostComponent {
   @Input() post: Post
   @Input() comments: Comment[]
   @Output() removeClicked: EventEmitter<number> = new EventEmitter<number>();
+  @Output() userClicked: EventEmitter<string> = new EventEmitter<string>();
   @Output() buttonClick: EventEmitter<{ id: number | undefined, isExpanded: boolean }> = new EventEmitter();
   isExpanded: boolean = false;
 
@@ -21,6 +22,10 @@ export class PostComponent {
 
   handleClick(id: number | undefined): void {
     this.removeClicked.emit(id);
+  }
+
+  handleCLickUser(email: string): void {
+    this.userClicked.emit(email)
   }
 
 }

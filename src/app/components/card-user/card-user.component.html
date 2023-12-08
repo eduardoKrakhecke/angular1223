@@ -10,6 +10,7 @@
     <p>Rua: {{ user.address.street }}</p>
     <p>CEP: {{ user.address.zipcode }}</p>
     <p>Mapa: {{user.address.geo.lat}}  {{user.address.geo.lng}}</p>
+    <hr/>
     <app-map [latitude]="user.address.geo.lat" [longitude]="user.address.geo.lng"></app-map>
   </ion-card-content>
 </ion-card>

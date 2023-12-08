@@ -2,7 +2,7 @@
 export const user = {
   id: 2,
   name: 'Eduardo Krakhecke Godoi',
-  email: 'eduardokg.mi6@gmail.com',
+  email: 'eduardo@gmail.com',
   phone: '51980131506',
   address: {
     street: 'Rua Paraíba',

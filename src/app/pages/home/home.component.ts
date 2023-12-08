@@ -4,14 +4,20 @@ import { ActivatedRoute } from '@angular/router';
 import { ToastService } from "@app/components/shared/toast/toast.service";
 import { LoadingService } from "@app/components/shared/loading/loading.service";
 import { ComentService } from "@app/services/coment.service";
+import { ModalConfirmService } from "@app/components/shared/modal-confirm/modal-confirm.service";
+import { PostService } from "@app/services/post.service";
+import { ModalUserService } from "@app/components/modal-user/modal-user.service";
 
 import { messages } from "@app/constants/messages";
 
 import { Post } from "@app/models/post";
 import { User } from "@app/models/user/user";
 import { Comment } from "@app/models/comment";
-import {ModalConfirmService} from "@app/components/shared/modal-confirm/modal-confirm.service";
-import {PostService} from "@app/services/post.service";
+import { AppUser } from "@app/models/user/app-user";
+
+import { appUserFakeData } from "@app/mock/user-data";
+
+
 
 
 @Component({
@@ -24,6 +30,7 @@ export class HomeComponent {
   users: User[] = []
   posts: Post[] = []
   comments: Comment[] = []
+  appUser = {} as AppUser
   postCommentsMap: Map<number | undefined, Comment[]> = new Map<number | undefined, Comment[]>();
   data: any
 
@@ -33,6 +40,7 @@ export class HomeComponent {
     private commentService: ComentService,
     private postService: PostService,
     private modalConfirmService: ModalConfirmService,
+    private modalUserService: ModalUserService,
     private toastService: ToastService,) {
 
     this.data = this.route.snapshot.data['data'];
@@ -74,6 +82,16 @@ export class HomeComponent {
         console.error(error);
       }
     )
+  }
+
+  handleClickUser(email: string): void {
+     this.appUser = appUserFakeData.find(user => user.email === email) as AppUser
+     if(this.appUser) {
+       this.modalUserService.openModal()
+     } else {
+       //TODO toast não abre as vezes obs: modal parece influenciar
+       this.toastService.showToast(messages.NO_DATA)
+     }
   }
 
   handleClickRemove(postId: number): void {

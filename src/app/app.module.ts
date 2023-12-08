@@ -21,6 +21,8 @@ import { PostComponent } from './components/post/post.component';
 import { RemoveSlashPipe } from './components/pipes/remove-slash.pipe';
 import { ModalConfirmComponent } from './components/shared/modal-confirm/modal-confirm.component';
 import { ModalUserComponent } from './components/modal-user/modal-user.component';
+import { BadgeComponent } from './components/shared/badge/badge.component';
+import { DateFormatPipe } from './components/pipes/date-format.pipe';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { ModalUserComponent } from './components/modal-user/modal-user.component
     RemoveSlashPipe,
     ModalConfirmComponent,
     ModalUserComponent,
+    BadgeComponent,
+    DateFormatPipe,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [

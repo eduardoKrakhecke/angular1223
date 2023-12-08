@@ -1,1 +1,34 @@
-<p>modal-user works!</p>
+<div class="modal" tabindex="-1"  *ngIf="modalUserService.isModalOpen()">
+  <div class="modal-content">
+    <div class="modal-body">
+      <div class="container-user-data">
+        <p><span class="label">Nome:</span> {{appUser.name}}</p>
+        <p><span class="label">Idade:</span> {{appUser.age}}</p>
+        <p><span class="label">Gênero:</span> {{appUser.gender === 'female'? 'Feminino' : 'Masculino'}}</p>
+      </div>
+      <div class="container-contact-data">
+        <p><span class="label">E-mail:</span> {{appUser.email}}</p>
+        <p><span class="label">Telefone:</span> {{appUser.phone}}</p>
+      </div>
+      <div class="container-user-status">
+        <p><span class="label">Membro desde:</span> {{appUser.registered | dateFormat}}</p>
+        <app-badge
+          [color]="appUser.isActive ? 'secondary': 'danger'"
+          [label]="appUser.isActive ? 'Ativo': 'Inativo'">
+        </app-badge>
+      </div>
+      <div class="container-user-address">
+        <p><span class="label">Endereço:</span> {{appUser.address}}</p>
+      </div>
+      <hr/>
+      <div class="container-map">
+        <app-map [longitude]="appUser.longitude.toString()" [latitude]="appUser.latitude.toString()"></app-map>
+      </div>
+
+    </div>
+    <div>
+      <hr/>
+      <ion-button size="small" color="light" (click)="closeModal()">Fechar</ion-button>
+    </div>
+  </div>
+</div>

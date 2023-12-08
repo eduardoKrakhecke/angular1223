@@ -1,4 +1,4 @@
-export const user = [
+export const appUserFakeData = [
   {
     "isActive": true,
     "picture": "http://placehold.it/32x32",

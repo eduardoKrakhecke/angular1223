@@ -17,7 +17,7 @@
       </a>
       <div *ngFor="let comment of comments">
         <div class="container-user">
-          <p class="comment-user">{{comment.email}}</p>
+          <p class="comment-user" (click)="handleCLickUser(comment.email)">{{comment.email}}</p>
           <p class="comment-body">comentou:</p>
         </div>
         <div class="container-comment">
