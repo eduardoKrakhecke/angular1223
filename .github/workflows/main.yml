@@ -34,4 +34,4 @@ jobs:
 
         with:
           branch: gh-pages
-          folder: dist/angular1223
+          folder: docs/angular1223
