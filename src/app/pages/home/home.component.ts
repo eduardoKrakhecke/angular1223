@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { ToastService } from "@app/components/shared/toast/toast.service";
@@ -29,12 +30,14 @@ export class HomeComponent {
 
   users: User[] = []
   posts: Post[] = []
+  post = {} as Post
   comments: Comment[] = []
   appUser = {} as AppUser
   postCommentsMap: Map<number | undefined, Comment[]> = new Map<number | undefined, Comment[]>();
   data: any
 
   constructor(
+    private cdr: ChangeDetectorRef,
     private route: ActivatedRoute,
     private loadingService: LoadingService,
     private commentService: ComentService,
@@ -101,6 +104,20 @@ export class HomeComponent {
         this.removePostById(postId);
       }
     });
+  }
+
+  createPost(post: Post): void {
+    this.postService.addPost(post).subscribe(
+      (response: Post) => {
+        response.created_at = new Date().getTime()
+        this.posts.unshift(response)
+        this.cdr.detectChanges();
+      },
+      (error: Error) => {
+        this.toastService.showToast(messages.GENERIC_ERROR);
+        console.error(error);
+      }
+    )
   }
 
 }

@@ -1,0 +1,38 @@
+<div class="container-post">
+  <div class="card">
+    <div class="content">
+      <form [formGroup]="postForm">
+      <ion-item>
+        <ion-input
+          label="Título da sua publicação:"
+          formControlName="title"
+          [(ngModel)]="post.title"
+          maxlength="35"
+        ></ion-input>
+      </ion-item>
+        <div class="error-form" *ngIf="postForm.get('title')?.hasError('required') && postForm.get('title')?.touched">
+          Título é obrigatório.
+        </div>
+      <ion-textarea
+        formControlName="body"
+        [counter]="true"
+        maxlength="200"
+        [counterFormatter]="customCounterFormatter"
+        [(ngModel)]="post.body"
+      ></ion-textarea>
+        <div class="error-form" *ngIf="postForm.get('body')?.hasError('required') && postForm.get('body')?.touched ">
+          Postagem é obrigatória.
+        </div>
+      </form>
+    </div>
+    <div class="container-button">
+      <ion-button
+        shape="round"
+        fill="outline"
+        [disabled]="!postForm.valid"
+        (click)="emitClickEvent(post)">Criar</ion-button>
+    </div>
+  </div>
+
+</div>
+

@@ -1,7 +1,9 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { BrowserModule } from '@angular/platform-browser';
+
 
 import { IonicModule } from '@ionic/angular';
 
@@ -23,6 +25,7 @@ import { ModalConfirmComponent } from './components/shared/modal-confirm/modal-c
 import { ModalUserComponent } from './components/modal-user/modal-user.component';
 import { BadgeComponent } from './components/shared/badge/badge.component';
 import { DateFormatPipe } from './components/pipes/date-format.pipe';
+import { CreatePostComponent } from './components/create-post/create-post.component';
 
 @NgModule({
   declarations: [
@@ -42,11 +45,13 @@ import { DateFormatPipe } from './components/pipes/date-format.pipe';
     ModalUserComponent,
     BadgeComponent,
     DateFormatPipe,
+    CreatePostComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule

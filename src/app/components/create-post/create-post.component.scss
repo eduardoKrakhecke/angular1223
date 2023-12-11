@@ -1,0 +1,47 @@
+.container-post {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.card {
+  width: 800px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+  padding: 14px;
+  background-color: white;
+
+}
+
+.container-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: white;
+  padding-bottom: 8px;
+}
+
+.error-form {
+  color: red;
+  font-size: 10px;
+
+}
+
+ion-textarea {
+  color: #525151;
+  font-family: "Segoe UI";
+}
+
+ion-input {
+  color: #525151;
+  font-family: "Segoe UI";
+  label: {
+    color: #525151;
+  }
+}

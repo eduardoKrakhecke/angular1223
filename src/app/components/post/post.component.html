@@ -1,8 +1,7 @@
 <div class="card-container">
   <div class="card">
     <div class="header">
-      <p> Usuário {{post.user?.username}} escreveu:</p>
-      <p>{{post.title}}</p>
+      <p> Usuário {{post.user?.username}} escreveu: {{post.title}}</p>
         <a class="icon-remove">
           <i class="fa fa-trash fa-lg" (click)="handleClick(post.id)"></i>
         </a>
@@ -17,6 +16,9 @@
       </a>
       <div *ngFor="let comment of comments">
         <div class="container-user">
+          <div *ngIf="comments.length === 0">
+            <p>Ninguém comentou a sua publicação ainda.</p>
+          </div>
           <p class="comment-user" (click)="handleCLickUser(comment.email)">{{comment.email}}</p>
           <p class="comment-body">comentou:</p>
         </div>
