@@ -30,7 +30,7 @@ jobs:
     needs: build
     steps:
        -name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4.5.0
+         uses: actions/deploy-pages@v3
 
         with:
           branch: gh-pages
