@@ -6,6 +6,7 @@ import { AuthGuard } from "@app/auth-guard/auth.guard";
 import { UserComponent } from "@app/pages/user/user.component";
 
 import { HomeResolverService } from "@app/services/home-resolver.service";
+import { WebSocketComponent } from "@app/pages/web-socket/web-socket.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -17,6 +18,7 @@ const routes: Routes = [
     children: [
       { path: 'home', component: HomeComponent, resolve: { data: HomeResolverService} },
       { path: 'user', component: UserComponent },
+      { path: 'websocket', component: WebSocketComponent}
       //{ path: 'clientes/listagem/detalhes/:id', component: ClientDatailComponent },
     ]
   },

@@ -26,6 +26,7 @@ import { ModalUserComponent } from './components/modal-user/modal-user.component
 import { BadgeComponent } from './components/shared/badge/badge.component';
 import { DateFormatPipe } from './components/pipes/date-format.pipe';
 import { CreatePostComponent } from './components/create-post/create-post.component';
+import { WebSocketComponent } from './pages/web-socket/web-socket.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { CreatePostComponent } from './components/create-post/create-post.compon
     BadgeComponent,
     DateFormatPipe,
     CreatePostComponent,
+    WebSocketComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [

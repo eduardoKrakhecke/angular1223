@@ -1,0 +1,21 @@
+.container {
+  padding: 30px;
+}
+
+.layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.container-input {
+  @extend .layout;
+}
+
+.container-button {
+  @extend .layout;
+  margin-top: 20px;
+}
+
+.container-message {
+  @extend .layout;
+}

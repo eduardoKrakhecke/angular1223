@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="container-input">
+    <ion-input
+      label="Mensagem:"
+      [(ngModel)]="message"
+      maxlength="100"
+    ></ion-input>
+  </div>
+ <div class="container-button">
+   <ion-button
+     shape="round"
+     fill="outline"
+     (click)="sendMessage(message)">Enviar
+   </ion-button>
+ </div>
+  <div class="container-message">
+    <p>{{receivedMessage}} <span *ngIf="receivedMessage.length !== 0">passou pelo websocket.</span> </p>
+  </div>
+
+</div>
+
+
+
