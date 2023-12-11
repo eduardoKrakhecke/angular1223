@@ -1,0 +1,23 @@
+<div class="container">
+  <ion-item>
+    <ion-input label="CEP:" type="number" [(ngModel)]="cep" (keyup)="getAddress()" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Rua:" [(ngModel)]="address.logradouro" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Bairro:" [(ngModel)]="address.bairro" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Cidade:" [(ngModel)]="address.localidade" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Complemento:" [(ngModel)]="address.complemento" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input label="UF:" [(ngModel)]="address.uf" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input label="DDD:" [(ngModel)]="address.ddd" ></ion-input>
+  </ion-item>
+</div>

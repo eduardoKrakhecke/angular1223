@@ -5,5 +5,10 @@ Projeto gerado com  [Angular CLI](https://github.com/angular/angular-cli) versã
 
 ## 
 Projeto criado como demonstração de algumas técnicas de desenvolvimento.
+- Resolve
+- Lazy Loading
+- Reative Forms
+- RXJS
+- WebSocket
 
 

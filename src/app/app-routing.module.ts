@@ -18,7 +18,8 @@ const routes: Routes = [
     children: [
       { path: 'home', component: HomeComponent, resolve: { data: HomeResolverService} },
       { path: 'user', component: UserComponent },
-      { path: 'websocket', component: WebSocketComponent}
+      { path: 'websocket', component: WebSocketComponent},
+      { path: 'lazyLoading-module', loadChildren: () => import('./modules/lazyloading/lazyloading.module').then(m => m.LazyloadingModule)}
       //{ path: 'clientes/listagem/detalhes/:id', component: ClientDatailComponent },
     ]
   },
