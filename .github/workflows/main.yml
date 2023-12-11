@@ -23,7 +23,7 @@ jobs:
         run: npm install
 
       - name: Build Angular App
-        run: npm run build --prod
+        run: npm run build --configuration production
 
   deploy:
     runs-on: ubuntu-latest
