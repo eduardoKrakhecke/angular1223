@@ -4,7 +4,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - master # Ou a branch que você deseja monitorar
+      - master # branch que você deseja monitorar
 
 jobs:
   build:
