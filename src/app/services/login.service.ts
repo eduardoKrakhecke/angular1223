@@ -3,15 +3,22 @@ import { Router } from "@angular/router";
 import { Login } from "@app/models/login";
 import { User } from "@app/models/user/user";
 import { user } from "@app/models/user/user-data";
-import { messages } from "@app/constants/messages";
+
 import { keys } from "@app/constants/keys";
 
 import { ReplaySubject } from 'rxjs';
+
+import { initializeApp } from 'firebase/app';
+import { getAnalytics } from 'firebase/analytics';
+import { environment } from "@environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
+
+  private firebaseApp = initializeApp(environment.firebaseConfig);
+  private analytics = getAnalytics(this.firebaseApp);
 
   constructor(private router: Router) { }
 
