@@ -23,15 +23,16 @@ jobs:
         run: npm install
 
       - name: Build Angular App
-        run: npm run build --configuration production
+          run: npm run build:prod
 
   deploy:
     runs-on: ubuntu-latest
     needs: build
     steps:
        -name: Deploy to GitHub Pages
-         uses: actions/deploy-pages@v3
+         uses: peaceiris/actions-gh-pages@v3
 
         with:
-          branch: gh-pages
-          folder: dist/angular1223
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: dist/angular1223
+            enable_jekyll: true
