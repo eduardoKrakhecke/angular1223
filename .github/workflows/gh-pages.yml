@@ -1,4 +1,4 @@
-# .github/workflows/main.yml
+# .github/workflows/gh-pages.yml
 name: Build and Deploy
 
 on:
