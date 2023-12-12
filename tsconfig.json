@@ -25,9 +25,7 @@
       "ES2022",
       "dom"
     ],
-    "types": [
-      "node"
-    ],
+    "types": ["node"],
     "paths": {
       "@app/*": ["src/app/*"],
       "@environments/*": ["src/environments/*"]
