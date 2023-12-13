@@ -2,24 +2,7 @@
   <app-card >
     <div class="form-login">
       <form  class="form-signin" (ngSubmit)="authenticate()">
-        <ion-input
-          label="E-mail"
-          [(ngModel)]="login.email"
-          [ngModelOptions]="{standalone: true}"
-          required
-          label-placement="floating"
-          fill="outline"
-          type="email">
-        </ion-input>
-        <ion-input
-          label="Senha"
-          [(ngModel)]="login.password"
-          [ngModelOptions]="{standalone: true}"
-          required
-          label-placement="floating"
-          fill="outline"
-          type="password">
-        </ion-input>
+
         <ion-button type="submit" color="">Login</ion-button>
       </form>
     </div>
