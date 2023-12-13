@@ -15,7 +15,7 @@ jobs:
           projectId: angular-demo-b66d6
         run:
           touch .env
-          echo FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }} >> .env
-          echo FIREBASE_AUTH_DOMAIN: ${{ secrets.FIREBASE_AUTH_DOMAIN }} >> .env
-          echo FIREBASE_PROJECTID: ${{ secrets.FIREBASE_PROJECTID }} >> .env
+        echo FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }} >> .env
+        echo FIREBASE_AUTH_DOMAIN: ${{ secrets.FIREBASE_AUTH_DOMAIN }} >> .env
+        echo FIREBASE_PROJECTID: ${{ secrets.FIREBASE_PROJECTID }} >> .env
           cat .env
