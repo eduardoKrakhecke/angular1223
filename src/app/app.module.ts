@@ -28,6 +28,10 @@ import { DateFormatPipe } from './components/pipes/date-format.pipe';
 import { CreatePostComponent } from './components/create-post/create-post.component';
 import { WebSocketComponent } from './pages/web-socket/web-socket.component';
 
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { environment } from "@environments/environment";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +60,9 @@ import { WebSocketComponent } from './pages/web-socket/web-socket.component';
     ReactiveFormsModule,
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
