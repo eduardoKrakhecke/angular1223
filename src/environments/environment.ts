@@ -5,7 +5,7 @@ export const environment = {
   BASE_URL_WEBSOCKET: 'wss://ws.postman-echo.com/raw',
   BASE_URL_CEP: 'https://viacep.com.br/ws',
   firebaseConfig: {
-    apiKey: process.env.FIREBASE_API_KEY,
+    apiKey: process.env['FIREBASE_API_KEY'],
     authDomain: process.env['FIREBASE_AUTH_DOMAIN'],
     projectId: process.env['FIREBASE_PROJECTID'],
     storageBucket: process.env['FIREBASE_STORAGE_BUCKET'],

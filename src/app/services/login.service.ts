@@ -10,7 +10,6 @@ import { ReplaySubject } from 'rxjs';
 
 import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { GoogleAuthProvider } from '@angular/fire/auth';
-import { environment } from "@environments/environment";
 
 
 
@@ -28,7 +27,6 @@ export class LoginService {
   public currentToken$ = this.currentTokenSource.asObservable();
 
   async loginWithGoogle(): Promise<any> {
-    console.log(environment.firebaseConfig.apiKey)
     try {
       const provider = new GoogleAuthProvider()
       const credential = await this.auth.signInWithPopup(provider)
