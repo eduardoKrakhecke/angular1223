@@ -4,7 +4,11 @@
   top: 0;
   width: 100%;
   overflow: hidden;
-  background-color: #1877f2;
+  background: rgb(29,101,167);
+  background: linear-gradient(0deg, rgba(29,101,167,1) 0%, rgba(26,72,162,1) 98%);
+  -webkit-box-shadow: -1px 6px 7px -1px rgba(173,171,173,0.63);
+  -moz-box-shadow: -1px 6px 7px -1px rgba(173,171,173,0.63);
+  box-shadow: -1px 6px 7px -1px rgba(173,171,173,0.63);
 }
 
 .topnav a {
@@ -19,22 +23,23 @@
 }
 
 .user-image {
-  margin-top: 3px;
+  cursor: pointer;
+  margin-top: 6px;
   margin-right: 8px;
   float: right;
   border-radius: 50%;
-  width: 42px;
-  height: 42px;
+  width: 38px;
+  height: 38px;
 }
 
 .topnav a:hover {
   color: #e7f0fa;
 }
 
-.topnav a.active {
+/*.topnav a.active {
   background-color: #1877f2;
   color: white;
-}
+}*/
 
 .topnav .icon {
   display: none;
@@ -51,6 +56,15 @@
 @media screen and (max-width: 600px) {
   .topnav.responsive {
     position: relative;
+  }
+  .user-image {
+    display: block;
+    margin-top: 10px;
+    margin-right: 8px;
+    float: right;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
   }
   .topnav.responsive .icon {
     position: absolute;
