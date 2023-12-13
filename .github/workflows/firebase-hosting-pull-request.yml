@@ -13,7 +13,7 @@ jobs:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANGULAR_DEMO_B66D6 }}
           projectId: angular-demo-b66d6
-        run: |
+        run:
           touch .env
           echo FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }} >> .env
           echo FIREBASE_AUTH_DOMAIN: ${{ secrets.FIREBASE_AUTH_DOMAIN }} >> .env
