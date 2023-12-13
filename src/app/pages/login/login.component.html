@@ -1,7 +1,7 @@
 <div class="container">
   <app-card >
     <div class="form-login">
-      <form #loginForm="ngForm" class="form-signin" (ngSubmit)="authenticate()">
+      <form  class="form-signin" (ngSubmit)="authenticate()">
         <ion-input
           label="E-mail"
           [(ngModel)]="login.email"
@@ -20,7 +20,7 @@
           fill="outline"
           type="password">
         </ion-input>
-        <ion-button [disabled]="loginForm.invalid" type="submit" color="">Login</ion-button>
+        <ion-button type="submit" color="">Login</ion-button>
       </form>
     </div>
 

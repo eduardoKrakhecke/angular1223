@@ -4,7 +4,7 @@ import { keys } from "@app/constants/keys";
 import { LoginService } from "@app/services/login.service";
 import { ToastService } from "@app/components/shared/toast/toast.service";
 import { Login } from "@app/models/login";
-import {messages} from "@app/constants/messages";
+import { messages } from "@app/constants/messages";
 
 
 @Component({
@@ -29,14 +29,14 @@ export class LoginComponent {
   }
 
   authenticate(): void {
-    const response = this.loginService.login(this.login)
-    if(response) {
+    this.loginService.loginWithGoogle().then((response) => {
+      console.log(response)
       this.router.navigateByUrl('/home');
-    } else {
-      this.toastService.showToast(messages.ERROR_LOGIN);
-      console.log(messages.ERROR_LOGIN)
-    }
 
+    }).catch((error) => {
+      this.toastService.showToast(messages.ERROR_LOGIN);
+      console.log(error)
+    })
 
   }
 

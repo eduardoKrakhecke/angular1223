@@ -8,30 +8,33 @@ import { keys } from "@app/constants/keys";
 
 import { ReplaySubject } from 'rxjs';
 
-import { initializeApp } from 'firebase/app';
-import { getAnalytics } from 'firebase/analytics';
-import { environment } from "@environments/environment";
+import { AngularFireAuth } from "@angular/fire/compat/auth";
+import { GoogleAuthProvider } from '@angular/fire/auth';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  private firebaseApp = initializeApp(environment.firebaseConfig);
-  private analytics = getAnalytics(this.firebaseApp);
+  constructor(
+    public auth: AngularFireAuth,
+    private router: Router
+  ) { }
 
-  constructor(private router: Router) { }
-
-  private currentTokenSource = new ReplaySubject<any>;
+  private currentTokenSource = new ReplaySubject<any>();
   public currentToken$ = this.currentTokenSource.asObservable();
 
-  login(login: Login): boolean {
-    if(login.email === 'ed@gmail.com' && login.password === '123'){
-      const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lI'
-      this.setToken(token)
-      return true
-    } else {
-      return false
+  async loginWithGoogle(): Promise<any> {
+    try {
+      const provider = new GoogleAuthProvider()
+      const credential = await this.auth.signInWithPopup(provider)
+      // @ts-ignore
+      this.setToken(credential.credential?.accessToken)
+      return credential
+    } catch (e) {
+      console.error(e)
     }
   }
 
