@@ -23,8 +23,9 @@ export class LoginComponent {
   }
 
   ngOnInit(): void {
-    if (localStorage.getItem(keys.LOCAL_STORAGE_TOKEN)) {
+    if (localStorage.getItem(keys.LOCAL_STORAGE_TOKEN) && localStorage.getItem(keys.LOCAL_STORAGE_USER) ) {
       localStorage.removeItem(keys.LOCAL_STORAGE_TOKEN);
+      localStorage.removeItem(keys.LOCAL_STORAGE_USER);
     }
   }
 

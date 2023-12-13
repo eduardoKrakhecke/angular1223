@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { UserConnected } from "@app/models/user/user-connected";
 
 
 @Component({
@@ -7,6 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent {
+
+  @Input() user: UserConnected
 
   open() {
     const nav = document.getElementById("myTopnav") as HTMLElement;

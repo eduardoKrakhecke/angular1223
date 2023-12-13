@@ -10,6 +10,7 @@ Projeto criado como demonstração de algumas técnicas de desenvolvimento.
 - Reative Forms
 - RXJS
 - WebSocket
+- Simple Map with leaflet
 - Login with google/firebase
 - GithHub CI/CD
 
