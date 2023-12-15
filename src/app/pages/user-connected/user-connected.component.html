@@ -1,0 +1,13 @@
+<div class="container">
+  <h3>Usuário conectado</h3>
+  <p><span>Nome: </span>{{userConnected.name}}</p>
+  <p><span>E-mail: </span>{{userConnected.email}}</p>
+  <p><span>Localização: </span>{{userConnected.locale}}</p>
+  <p><span>E-mail verificado: </span>{{userConnected.verified_email ? 'Sim' : 'Não'}}</p>
+  <img src="{{userConnected.picture}}">
+</div>
+<hr>
+<div class="container-button">
+  <ion-button routerLink="/home" fill="outline">Voltar</ion-button>
+</div>
+

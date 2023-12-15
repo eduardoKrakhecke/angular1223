@@ -30,8 +30,7 @@ export class LoginComponent {
   }
 
   authenticate(): void {
-    this.loginService.loginWithGoogle().then((response) => {
-      console.log(response)
+    this.loginService.loginWithGoogle().then(() => {
       this.router.navigateByUrl('/home');
 
     }).catch((error) => {

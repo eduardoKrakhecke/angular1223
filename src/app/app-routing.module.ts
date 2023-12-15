@@ -7,6 +7,7 @@ import { UserComponent } from "@app/pages/user/user.component";
 
 import { HomeResolverService } from "@app/services/home-resolver.service";
 import { WebSocketComponent } from "@app/pages/web-socket/web-socket.component";
+import { UserConnectedComponent } from "@app/pages/user-connected/user-connected.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -19,6 +20,7 @@ const routes: Routes = [
       { path: 'home', component: HomeComponent, resolve: { data: HomeResolverService} },
       { path: 'user', component: UserComponent },
       { path: 'websocket', component: WebSocketComponent},
+      { path: 'user-connected', component: UserConnectedComponent},
       { path: 'lazyLoading-module', loadChildren: () => import('./modules/lazyloading/lazyloading.module').then(m => m.LazyloadingModule)}
       //{ path: 'clientes/listagem/detalhes/:id', component: ClientDatailComponent },
     ]
