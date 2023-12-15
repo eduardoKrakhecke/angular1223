@@ -3,7 +3,7 @@ import { ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { ToastService } from "@app/components/shared/toast/toast.service";
-import { LoadingService } from "@app/components/shared/loading/loading.service";
+import { LoaderService } from "@app/components/shared/loader/loader.service";
 import { ComentService } from "@app/services/coment.service";
 import { ModalConfirmService } from "@app/components/shared/modal-confirm/modal-confirm.service";
 import { PostService } from "@app/services/post.service";
@@ -18,13 +18,15 @@ import { AppUser } from "@app/models/user/app-user";
 
 import { appUserFakeData } from "@app/mock/user-data";
 
+import { fadeIn } from "@app/functions/animations";
 
 
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  animations: [fadeIn],
 })
 export class HomeComponent {
 
@@ -35,11 +37,12 @@ export class HomeComponent {
   appUser = {} as AppUser
   postCommentsMap: Map<number | undefined, Comment[]> = new Map<number | undefined, Comment[]>();
   data: any
+  isLoading: boolean = false
 
   constructor(
     private cdr: ChangeDetectorRef,
+    private loaderService: LoaderService,
     private route: ActivatedRoute,
-    private loadingService: LoadingService,
     private commentService: ComentService,
     private postService: PostService,
     private modalConfirmService: ModalConfirmService,
@@ -52,9 +55,17 @@ export class HomeComponent {
   }
 
   ngOnInit() {
-    this.posts.forEach(post => {
-      post.user = this.users.find(user => user.id === post.userId);
-    });
+    setTimeout(() => {
+      this.isLoading = true
+      this.loaderService.showLoading(!this.isLoading)
+
+      this.posts.forEach(post => {
+        post.user = this.users.find(user => user.id === post.userId);
+      });
+    }, 1000);
+    this.isLoading = false
+    this.loaderService.showLoading(!this.isLoading)
+
   }
 
   showComments(obj: any) {

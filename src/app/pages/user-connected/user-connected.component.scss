@@ -1,0 +1,16 @@
+ion-button {
+  --color: rgb(33, 90, 205);
+  --border-color: rgb(33, 90, 205);
+}
+
+.container {
+  display: flex;
+flex-direction: column;
+  align-items: center;
+}
+
+.container-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}

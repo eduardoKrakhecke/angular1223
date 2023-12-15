@@ -4,11 +4,10 @@
   top: 0;
   width: 100%;
   overflow: hidden;
-  background: rgb(29,101,167);
-  background: linear-gradient(0deg, rgba(29,101,167,1) 0%, rgba(26,72,162,1) 98%);
-  -webkit-box-shadow: -1px 6px 7px -1px rgba(173,171,173,0.63);
-  -moz-box-shadow: -1px 6px 7px -1px rgba(173,171,173,0.63);
-  box-shadow: -1px 6px 7px -1px rgba(173,171,173,0.63);
+  background: linear-gradient(0deg, rgba(29, 101, 167, 1) 0%, rgba(26, 72, 162, 1) 98%);
+  -webkit-box-shadow: -1px 6px 7px -1px rgba(173, 171, 173, 0.63);
+  -moz-box-shadow: -1px 6px 7px -1px rgba(173, 171, 173, 0.63);
+  box-shadow: -1px 6px 7px -1px rgba(173, 171, 173, 0.63);
 }
 
 .topnav a {
@@ -24,7 +23,7 @@
 
 .user-image {
   cursor: pointer;
-  margin-top: 6px;
+  margin-top: 8px;
   margin-right: 8px;
   float: right;
   border-radius: 50%;
@@ -32,21 +31,24 @@
   height: 38px;
 }
 
+.user-username {
+  float: right;
+  margin-right: 8px;
+  color: #f2f2f2;
+}
+
 .topnav a:hover {
   color: #e7f0fa;
 }
-
-/*.topnav a.active {
-  background-color: #1877f2;
-  color: white;
-}*/
 
 .topnav .icon {
   display: none;
 }
 
 @media screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {display: none;}
+  .topnav a:not(:first-child) {
+    display: none;
+  }
   .topnav a.icon {
     float: right;
     display: block;

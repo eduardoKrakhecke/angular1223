@@ -1,23 +1,30 @@
-<app-create-post
-  (buttonClick)="createPost($event)"
->
-</app-create-post>
-<div *ngFor="let post of posts">
-  <app-post
-    (userClicked)="handleClickUser($event)"
-    (buttonClick)="showComments($event)"
-    (removeClicked)="handleClickRemove($event)"
-    [comments]="postCommentsMap.get(post.id) || []"
-    [post]="post">
-  </app-post>
+
+<div *ngIf="isLoading" [@fadeIn] >
+  <app-create-post
+    (buttonClick)="createPost($event)"
+  >
+  </app-create-post>
+  <div *ngFor="let post of posts">
+    <app-post
+      (userClicked)="handleClickUser($event)"
+      (buttonClick)="showComments($event)"
+      (removeClicked)="handleClickRemove($event)"
+      [comments]="postCommentsMap.get(post.id) || []"
+      [post]="post">
+    </app-post>
+  </div>
+
+  <app-modal-user
+    [appUser]="appUser"
+  >
+  </app-modal-user>
+
+  <app-modal-confirm
+    [title]="'Deseja remover essa publicação ?'"
+    [message]="'Essa ação não poderá ser desfeita.'">
+  </app-modal-confirm>
 </div>
 
-<app-modal-user
-  [appUser]="appUser"
->
-</app-modal-user>
 
-<app-modal-confirm
-  [title]="'Deseja remover essa publicação ?'"
-  [message]="'Essa ação não poderá ser desfeita.'">
-</app-modal-confirm>
+
+

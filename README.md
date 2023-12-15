@@ -4,7 +4,7 @@ Projeto gerado com  [Angular CLI](https://github.com/angular/angular-cli) versã
 
 
 ## 
-Projeto criado como demonstração de algumas técnicas de desenvolvimento.
+Projeto criado como demonstração de algumas técnicas/habilidades de desenvolvimento.
 - Resolve
 - Lazy Loading
 - Reative Forms
@@ -12,6 +12,7 @@ Projeto criado como demonstração de algumas técnicas de desenvolvimento.
 - WebSocket
 - Simple Map with leaflet
 - Login with google/firebase
+- Ionic Framework
 - GithHub CI/CD
 
 

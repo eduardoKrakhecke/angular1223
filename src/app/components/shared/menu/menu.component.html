@@ -1,11 +1,11 @@
-
 <div class="topnav" id="myTopnav">
   <a routerLink="/home" class="active">Home</a>
   <a  routerLink="/user">Usuários</a>
   <a  routerLink="/websocket">WebSocket</a>
   <a  routerLink="lazyLoading-module/lazyLoading">Lazy Loading</a>
-  <img class="user-image" src="{{user.picture}}">
+  <img class="user-image" routerLink="/user-connected" src="{{user.picture}}">
   <a class="icon" (click)="open()">
     <i class="fa fa-bars"></i>
   </a>
+  <p class="user-username"> Bem vindo {{user.given_name}}</p>
 </div>

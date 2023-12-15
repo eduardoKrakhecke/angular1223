@@ -3,12 +3,18 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { BrowserModule } from '@angular/platform-browser';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { environment } from "@environments/environment";
 
 import { IonicModule } from '@ionic/angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 
 import { LoginComponent } from './pages/login/login.component';
 import { CardComponent } from './components/shared/card/card.component';
@@ -27,10 +33,10 @@ import { BadgeComponent } from './components/shared/badge/badge.component';
 import { DateFormatPipe } from './components/pipes/date-format.pipe';
 import { CreatePostComponent } from './components/create-post/create-post.component';
 import { WebSocketComponent } from './pages/web-socket/web-socket.component';
+import { UserConnectedComponent } from './pages/user-connected/user-connected.component';
 
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { environment } from "@environments/environment";
+
+
 
 @NgModule({
   declarations: [
@@ -52,6 +58,7 @@ import { environment } from "@environments/environment";
     DateFormatPipe,
     CreatePostComponent,
     WebSocketComponent,
+    UserConnectedComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
@@ -61,6 +68,7 @@ import { environment } from "@environments/environment";
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
+    BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
   ],
