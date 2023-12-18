@@ -1,0 +1,32 @@
+<app-card>
+
+  <ion-row>
+    <ion-col size-md="6" size-lg="6">
+      <ion-input maxlength="80" fill="outline" labelPlacement="floating" [(ngModel)]="pdfParameter.header.headerTextTitle" label="Título do cabeçalho:" ></ion-input>
+    </ion-col>
+
+    <ion-col size-md="6" size-lg="2">
+      <ion-input fill="outline" labelPlacement="floating" [(ngModel)]="pdfParameter.header.headerColor" label="Cor do cabeçalho:" ></ion-input>
+      <input
+        [(colorPicker)]="pdfParameter.header.headerColor"
+        [style.background]="pdfParameter.header.headerColor"/>
+    </ion-col>
+    <ion-col size-md="6" size-lg="1">
+      <ion-input type="number" fill="outline" labelPlacement="floating" [(ngModel)]="pdfParameter.header.headerSize" label="Tamanho do cabeçalho:" ></ion-input>
+    </ion-col>
+  </ion-row>
+
+  <ion-input maxlength="150" fill="outline" labelPlacement="floating" [(ngModel)]="pdfParameter.header.headerText" label="SubTítulo do cabeçalho:" ></ion-input>
+
+  <hr>
+  <ion-textarea
+    label="Digite seu texto..."
+    [(ngModel)]="pdfParameter.text.text"
+    rows="20"
+  ></ion-textarea>
+
+  <div class="container-button">
+    <ion-button routerLink="/home" fill="outline">Voltar</ion-button>
+    <ion-button fill="outline" (click)="create()">Gerar PDF</ion-button>
+  </div>
+</app-card>

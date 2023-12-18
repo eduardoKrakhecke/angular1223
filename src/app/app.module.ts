@@ -6,11 +6,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
+import { AngularEditorModule } from '@kolkov/angular-editor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { environment } from "@environments/environment";
 
 import { IonicModule } from '@ionic/angular';
+import { ColorPickerModule } from 'ngx-color-picker';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,6 +37,9 @@ import { DateFormatPipe } from './components/pipes/date-format.pipe';
 import { CreatePostComponent } from './components/create-post/create-post.component';
 import { WebSocketComponent } from './pages/web-socket/web-socket.component';
 import { UserConnectedComponent } from './pages/user-connected/user-connected.component';
+import { GalleryComponent } from './pages/gallery/gallery.component';
+import { TextEditorComponent } from './pages/text-editor/text-editor.component';
+import { CreatePdfComponent } from './pages/create-pdf/create-pdf.component';
 
 
 
@@ -59,6 +65,9 @@ import { UserConnectedComponent } from './pages/user-connected/user-connected.co
     CreatePostComponent,
     WebSocketComponent,
     UserConnectedComponent,
+    GalleryComponent,
+    TextEditorComponent,
+    CreatePdfComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
@@ -67,8 +76,10 @@ import { UserConnectedComponent } from './pages/user-connected/user-connected.co
     ReactiveFormsModule,
     BrowserModule,
     IonicModule.forRoot(),
+    ColorPickerModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    AngularEditorModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
   ],

@@ -1,0 +1,8 @@
+<app-card>
+    <angular-editor [config]="editorConfig" [placeholder]="'Digite seu texto'" [(ngModel)]="htmlContent"></angular-editor>
+  <div class="container-button">
+    <ion-button routerLink="/home" fill="outline">Voltar</ion-button>
+    <ion-button fill="outline" (click)="save()">Salvar</ion-button>
+  </div>
+</app-card>
+
