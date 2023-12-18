@@ -8,6 +8,9 @@ import { UserComponent } from "@app/pages/user/user.component";
 import { HomeResolverService } from "@app/services/home-resolver.service";
 import { WebSocketComponent } from "@app/pages/web-socket/web-socket.component";
 import { UserConnectedComponent } from "@app/pages/user-connected/user-connected.component";
+import { GalleryComponent } from "@app/pages/gallery/gallery.component";
+import { TextEditorComponent } from "@app/pages/text-editor/text-editor.component";
+import { CreatePdfComponent } from "@app/pages/create-pdf/create-pdf.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -21,6 +24,9 @@ const routes: Routes = [
       { path: 'user', component: UserComponent },
       { path: 'websocket', component: WebSocketComponent},
       { path: 'user-connected', component: UserConnectedComponent},
+      { path: 'gallery', component: GalleryComponent},
+      { path: 'text-editor', component: TextEditorComponent},
+      { path: 'create-pdf', component: CreatePdfComponent},
       { path: 'lazyLoading-module', loadChildren: () => import('./modules/lazyloading/lazyloading.module').then(m => m.LazyloadingModule)}
       //{ path: 'clientes/listagem/detalhes/:id', component: ClientDatailComponent },
     ]
