@@ -20,4 +20,5 @@ jobs:
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANGULAR_DEMO_B66D6 }}
+          expires: 90d
           projectId: angular-demo-b66d6

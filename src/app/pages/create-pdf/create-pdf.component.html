@@ -1,18 +1,21 @@
 <app-card>
 
-  <ion-row>
-    <ion-col size-md="6" size-lg="6">
+  <ion-row class="container-parameters">
+    <ion-col size-md="6" size-lg="7">
       <ion-input maxlength="80" fill="outline" labelPlacement="floating" [(ngModel)]="pdfParameter.header.headerTextTitle" label="Título do cabeçalho:" ></ion-input>
     </ion-col>
 
-    <ion-col size-md="6" size-lg="2">
-      <ion-input fill="outline" labelPlacement="floating" [(ngModel)]="pdfParameter.header.headerColor" label="Cor do cabeçalho:" ></ion-input>
-      <input
-        [(colorPicker)]="pdfParameter.header.headerColor"
-        [style.background]="pdfParameter.header.headerColor"/>
+    <ion-col size-md="6" size-lg="3">
+      <ion-item>
+        <ion-select fill="outline" labelPlacement="floating" placeholder="Selecione o alinhamento" [(ngModel)]="pdfParameter.header.headerAlignment">
+          <ion-select-option value="center">Centralizado</ion-select-option>
+          <ion-select-option value="right">Direita</ion-select-option>
+          <ion-select-option value="left">Esquerda</ion-select-option>
+        </ion-select>
+      </ion-item>
     </ion-col>
-    <ion-col size-md="6" size-lg="1">
-      <ion-input type="number" fill="outline" labelPlacement="floating" [(ngModel)]="pdfParameter.header.headerSize" label="Tamanho do cabeçalho:" ></ion-input>
+    <ion-col size-md="6" size-lg="2">
+      <ion-input  type="number" fill="outline" labelPlacement="floating" [(ngModel)]="pdfParameter.header.headerSize" label="Tamanho:" ></ion-input>
     </ion-col>
   </ion-row>
 
