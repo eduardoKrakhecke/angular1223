@@ -21,3 +21,10 @@ ion-input {
 hr {
   margin-top: 20px;
 }
+
+.container-parameters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
