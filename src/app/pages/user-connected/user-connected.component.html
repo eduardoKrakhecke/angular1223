@@ -1,13 +1,27 @@
 <div class="container">
-  <h3>Usuário conectado</h3>
-  <p><span>Nome: </span>{{userConnected.name}}</p>
-  <p><span>E-mail: </span>{{userConnected.email}}</p>
-  <p><span>Localização: </span>{{userConnected.locale}}</p>
-  <p><span>E-mail verificado: </span>{{userConnected.verified_email ? 'Sim' : 'Não'}}</p>
-  <img src="{{userConnected.picture}}">
+  <app-card>
+    <div class="container-data">
+      <div class="container-user-image">
+        <img class="image-user" src="{{userConnected.picture}}">
+      </div>
+      <div class="container-user-info">
+        <div class="container-user-data">
+          <p><span>Nome: </span>{{userConnected.name}}</p>
+        </div>
+        <div class="container-user-data">
+          <p><span>E-mail: </span>{{userConnected.email}}</p>
+        </div>
+        <div class="container-user-data">
+          <p><span>Localização: </span>{{userConnected.locale}}</p>
+        </div>
+        <div class="container-user-data">
+          <p><span>E-mail verificado: </span>{{userConnected.verified_email ? 'Sim' : 'Não'}}</p>
+        </div>
+      </div>
+    </div>
+  </app-card>
 </div>
 <hr>
 <div class="container-button">
   <ion-button routerLink="/home" fill="outline">Voltar</ion-button>
 </div>
-

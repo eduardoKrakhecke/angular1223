@@ -71,7 +71,7 @@ export class HomeComponent {
   showComments(obj: any) {
    if(obj.isExpanded) {
      if (!this.postCommentsMap.has(obj.id)) {
-       this.commentService.getComentByIdPost(obj.id).subscribe(
+       this.commentService.getListById(obj.id).subscribe(
          (response: Comment[]) => {
            this.postCommentsMap.set(obj.id, response);
            console.log(this.postCommentsMap.get(obj.id));
@@ -86,7 +86,7 @@ export class HomeComponent {
   }
 
   removePostById(id: number): void {
-    this.postService.deletePost(id).subscribe(
+    this.postService.delete(id).subscribe(
       () => {
         this.posts = this.posts.filter(post => post.id !== id);
         this.toastService.showToast(messages.GENERIC_SUCCESS);
@@ -118,7 +118,7 @@ export class HomeComponent {
   }
 
   createPost(post: Post): void {
-    this.postService.addPost(post).subscribe(
+    this.postService.create(post).subscribe(
       (response: Post) => {
         response.created_at = new Date().getTime()
         this.posts.unshift(response)
