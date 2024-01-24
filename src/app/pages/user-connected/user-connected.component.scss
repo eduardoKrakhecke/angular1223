@@ -1,8 +1,3 @@
-ion-button {
-  --color: rgb(33, 90, 205);
-  --border-color: rgb(33, 90, 205);
-}
-
 .container {
   display: flex;
   flex-direction: column;
@@ -11,6 +6,44 @@ ion-button {
 
 .container-button {
   display: flex;
-  flex-direction: row;
   justify-content: flex-end;
+}
+
+.image-user {
+  border-radius: 50px;
+}
+
+app-card {
+  width: auto;
+}
+
+.container-user-image {
+  margin-right: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container-user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-user-data {
+  display: flex;
+  flex-direction: row;
+}
+
+.container-data {
+  display: flex;
+  flex-direction: row;
+}
+
+p {
+  font-size: 16px;
+  padding: 4px;
+}
+
+span {
+  font-weight: bold;
 }

@@ -23,7 +23,7 @@ export class HomeResolverService implements Resolve<any> {
 
   resolve(): Observable<any> {
     return forkJoin([
-      this.postService.getPosts(),
+      this.postService.get(),
       this.userService.getUsers()
     ]).pipe(map(([posts, users]) => ({ posts, users })),
       catchError(error => {
